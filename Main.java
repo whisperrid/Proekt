@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     private static String getCodingIncodMessage(String message, int key, char firstCharAlfabet, char lastCharAlfabet) {
-        StringBuilder strBox = new StringBuilder(message.length());
+        StringBuilder strBox = new StringBuilder(message.length()); //Стринг билдер так как много раз будет менятся буквенное значение
         char tmp;
         int countCharsAlfabet = (lastCharAlfabet - firstCharAlfabet) + 1;
         for (int i = 0; i < message.length(); i++) {
