@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class Main {
     private static String getCodingIncodMessage(String message, int key, char firstCharAlfabet, char lastCharAlfabet) {
         StringBuilder strBox = new StringBuilder(message.length()); //Стринг билдер так как много раз будет менятся буквенное значение
-        char tmp;
+        char pos1;
         int countCharsAlfabet = (lastCharAlfabet - firstCharAlfabet) + 1;
         for (int i = 0; i < message.length(); i++) {
-            tmp = message.charAt(i);
+            pos1 = message.charAt(i);
             if (Character.isLetter(message.charAt(i))) {
-                tmp += key % countCharsAlfabet;
-                if (tmp > lastCharAlfabet)
-                    tmp = (char) (tmp % lastCharAlfabet + firstCharAlfabet - 1);
-                else if (tmp < firstCharAlfabet)
-                    tmp = (char) (tmp + countCharsAlfabet);
+                pos1 += key % countCharsAlfabet;
+                if (pos1 > lastCharAlfabet)
+                    pos1 = (char) (pos1 % lastCharAlfabet + firstCharAlfabet - 1);
+                else if (pos1 < firstCharAlfabet)
+                    pos1 = (char) (pos1 + countCharsAlfabet);
             }
-            strBox.append(tmp);
+            strBox.append(pos1);
         }
         return strBox.toString();
     }
